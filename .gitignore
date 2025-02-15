@@ -1,0 +1,35 @@
+# .NET build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]ist/
+[Dd]istPublish/
+[Dd]ebug/
+[Dd]ebugPublic/
+
+# User-specific files
+.vs/
+.idea/
+.vscode/
+
+# Windows installer files
+Thumbs.db
+Desktop.ini
+
+# Visual Studio for Mac
+.vscode/
+
+# Windows Installer Files
+Thumbs.db
+ehthumbs.db
+
+# JetBrains Rider
+.idea/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Backup files
+*~
