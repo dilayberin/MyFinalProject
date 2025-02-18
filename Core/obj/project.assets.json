@@ -1010,47 +1010,6 @@
             "rid": "win"
           }
         }
-      },
-      "Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.2"
-        },
-        "compile": {
-          "bin/placeholder/Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Core.dll": {}
-        }
-      },
-      "DataAccess/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Core": "1.0.0",
-          "Entities": "1.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.2"
-        },
-        "compile": {
-          "bin/placeholder/DataAccess.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DataAccess.dll": {}
-        }
-      },
-      "Entities/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Core": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Entities.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Entities.dll": {}
-        }
       }
     }
   },
@@ -2841,27 +2800,11 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
-    },
-    "Core/1.0.0": {
-      "type": "project",
-      "path": "../Core/Core.csproj",
-      "msbuildProject": "../Core/Core.csproj"
-    },
-    "DataAccess/1.0.0": {
-      "type": "project",
-      "path": "../DataAccess/DataAccess.csproj",
-      "msbuildProject": "../DataAccess/DataAccess.csproj"
-    },
-    "Entities/1.0.0": {
-      "type": "project",
-      "path": "../Entities/Entities.csproj",
-      "msbuildProject": "../Entities/Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "DataAccess >= 1.0.0",
-      "Entities >= 1.0.0"
+      "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.2"
     ]
   },
   "packageFolders": {
@@ -2871,11 +2814,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dilay\\source\\repos\\MyFinalProject\\Business\\Business.csproj",
-      "projectName": "Business",
-      "projectPath": "C:\\Users\\dilay\\source\\repos\\MyFinalProject\\Business\\Business.csproj",
+      "projectUniqueName": "C:\\Users\\dilay\\source\\repos\\MyFinalProject\\Core\\Core.csproj",
+      "projectName": "Core",
+      "projectPath": "C:\\Users\\dilay\\source\\repos\\MyFinalProject\\Core\\Core.csproj",
       "packagesPath": "C:\\Users\\dilay\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dilay\\source\\repos\\MyFinalProject\\Business\\obj\\",
+      "outputPath": "C:\\Users\\dilay\\source\\repos\\MyFinalProject\\Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2896,14 +2839,7 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {
-            "C:\\Users\\dilay\\source\\repos\\MyFinalProject\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\dilay\\source\\repos\\MyFinalProject\\DataAccess\\DataAccess.csproj"
-            },
-            "C:\\Users\\dilay\\source\\repos\\MyFinalProject\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\dilay\\source\\repos\\MyFinalProject\\Entities\\Entities.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -2920,6 +2856,12 @@
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[9.0.2, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
