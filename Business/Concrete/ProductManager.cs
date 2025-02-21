@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -24,17 +25,21 @@ namespace Business.Concrete
         {
             if (product.ProductName.Length<2)
             {
-                return new ErrorResult("Ürün ismi min 2 karakter olmalıdır");              
+                return new ErrorResult(Messages.ProductNameInvalid);              
             }
             _productDal.Add(product);
 
-            return new Result(true,"Ürün eklendi");
+            return new SuccessResult(Messages.ProductAdded);
         }
 
-        public List<Product> GetAll()
+        public IDataResult<List<Product>> GetAll()
         {
             //iş kodları . örn yetkisi var mı
-            return _productDal.GetAll();
+            if (DateTime.Now.Hour==22)
+            {
+                return new ErrorDataResult();
+            }
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(),true,"Ürünler listelendi");
           
         }
 
